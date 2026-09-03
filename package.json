@@ -1,0 +1,25 @@
+{
+  "name": "middle-frontend-project-390",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "[![hexlet-check](https://github.com/pashafromrussia63/middle-frontend-project-390/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/pashafromrussia63/middle-frontend-project-390/actions)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "vitest run ./tests/smoke.test.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.4.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  },
+  "dependencies": {
+    "@hexlet/frontend-flight-booking-server": "^0.4.0"
+  }
+}

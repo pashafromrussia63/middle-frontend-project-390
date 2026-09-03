@@ -1,0 +1,29 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npx playwright install chromium
+
+      - name: Get contract
+        run: npx frontend-flight-booking-server contract
+
+      - name: Start server & run tests
+        run: |
+          npx @stoplight/prism-cli mock contract/openapi.yaml &
+          sleep 3
+          APP_URL=http://localhost:4010 npx playwright test tests/smoke.spec.ts
