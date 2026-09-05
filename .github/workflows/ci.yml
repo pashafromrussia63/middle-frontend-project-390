@@ -13,17 +13,13 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install
+        run: |
+          npm install
+          npx playwright install chromium
 
-      - name: Install Playwright
-        run: npx playwright install chromium
-
-      - name: Get contract
-        run: npx frontend-flight-booking-server contract
-
-      - name: Start server & run tests
+      - name: Test
         run: |
           npx @stoplight/prism-cli mock contract/openapi.yaml &
-          sleep 3
-          APP_URL=http://localhost:4010 npx playwright test tests/smoke.spec.ts
+          sleep 5
+          APP_URL=http://localhost:4010 npm test
