@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "vitest run ./tests/smoke.spec.ts"
+    "test": "playwright test tests/smoke.spec.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +17,7 @@
     "@stoplight/prism-cli": "^5.14.2",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.4.1",
-    "typescript": "^7.0.2",
-    "vitest": "^4.1.11"
+    "typescript": "^7.0.2"
   },
   "dependencies": {
     "@hexlet/frontend-flight-booking-server": "^0.4.0"
