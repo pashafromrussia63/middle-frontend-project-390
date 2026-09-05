@@ -18,8 +18,10 @@ jobs:
           npm install
           npx playwright install chromium
 
-      - name: Test
+      - name: Build
+        run: make build
+
+      - name: Start server & test
         run: |
-          npx @stoplight/prism-cli mock contract/openapi.yaml &
-          sleep 5
-          APP_URL=http://localhost:4010 npm test
+          npx serve dist -l 5173
+          APP_URL=http://localhost:5173 make test

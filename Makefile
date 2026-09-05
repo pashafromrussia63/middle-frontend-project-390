@@ -6,4 +6,4 @@ build:
 	npm run build
 
 test:
-	APP_URL=http://localhost:4010 npx playwright test tests/smoke.spec.ts
+	npx playwright test tests/smoke.spec.ts
