@@ -1,4 +1,3 @@
-// tests/smoke.spec.ts
 import { test, expect } from '@playwright/test';
 
 test('Главная страница открывается без ошибок в консоли и показывает <h1>', async ({ page }) => {
@@ -14,6 +13,9 @@ test('Главная страница открывается без ошибок
 
   expect(errors).toHaveLength(0);
 
-  const h1Text = await page.textContent('h1');
+  const heading = page.locator('[data-testid="main-heading"]');
+  await expect(heading).toBeVisible();
+  
+  const h1Text = await heading.textContent();
   expect(h1Text?.trim()).not.toBe('');
 });
