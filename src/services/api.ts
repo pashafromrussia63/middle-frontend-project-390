@@ -59,7 +59,7 @@ export type Booking = {
 };
 
 const api = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: 'http://localhost:4010',
     headers: {
         'Content-Type': 'application/json',
     },
@@ -105,6 +105,20 @@ export const createBooking = async (payload: CreateBookingRequest): Promise<Book
     };
 
     const response = await api.post<Booking>('/api/bookings', serverPayload);
+    return response.data;
+};
+
+export const getBookingByCode = async (code: string, lastName: string): Promise<Booking> => {
+    const response = await api.get<Booking>(`/api/bookings/${code}`, {
+        params: { lastName }
+    });
+    return response.data;
+};
+
+export const cancelBooking = async (code: string, lastName: string): Promise<Booking> => {
+    const response = await api.post<Booking>(`/api/bookings/${code}/cancel`, {
+        lastName
+    });
     return response.data;
 };
 

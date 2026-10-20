@@ -71,17 +71,16 @@ function SearchForm() {
 
     useEffect(() => {
         loadCities();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
-        <div>
+        <div className="pt-2">
             <form
-                className="row g-3 p-4 border rounded shadow-sm bg-light"
+                className="d-flex flex-row align-items-end"
                 onSubmit={handleSearchSubmit}
                 data-testid="flight-search-form"
             >
-                <div className="col-md-3">
+                <div className="flex-grow-1 me-2">
                     <label htmlFor="origin" className="form-label fw-semibold">Откуда</label>
                     <select
                         id="origin"
@@ -98,7 +97,7 @@ function SearchForm() {
                     </select>
                 </div>
 
-                <div className="col-md-3">
+                <div className="flex-grow-1 me-2">
                     <label htmlFor="destination" className="form-label fw-semibold">Куда</label>
                     <select
                         id="destination"
@@ -115,7 +114,7 @@ function SearchForm() {
                     </select>
                 </div>
 
-                <div className="col-md-2">
+                <div className="me-2 flex-shrink-1">
                     <label htmlFor="date" className="form-label fw-semibold">Дата вылета</label>
                     <input
                         id="date"
@@ -129,7 +128,7 @@ function SearchForm() {
                     />
                 </div>
 
-                <div className="col-md-2">
+                <div className="me-2 flex-shrink-0">
                     <label htmlFor="passengers" className="form-label fw-semibold">Пассажиры</label>
                     <input
                         id="passengers"
@@ -145,7 +144,7 @@ function SearchForm() {
                     />
                 </div>
 
-                <div className="col-md-2 d-flex align-items-end">
+                <div className="flex-shrink-1">
                     <button
                         type="submit"
                         className="btn btn-primary w-100"

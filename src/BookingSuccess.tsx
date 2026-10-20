@@ -8,8 +8,8 @@ type Props = {
 
 function BookingSuccess({ booking }: Props) {
     return (
-        <div className="container py-5" style={{ maxWidth: '1000px' }} data-testid="booking-success">
-            <h1 className="fw-bold mb-4 fs-1">Бронирование оформлено</h1>
+        <div className="pt-2" style={{ maxWidth: '1000px' }} data-testid="booking-success">
+            <h2 className="fw-bold mb-4">Бронирование оформлено</h2>
 
             <p className="fs-6 mb-4">
                 Код бронирования: <span data-testid="booking-code"><strong>{booking.code}</strong></span>

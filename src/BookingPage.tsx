@@ -71,7 +71,6 @@ function BookingPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError(null);
-        console.log(passengers);
 
         if (!contact.email.trim() || !contact.phone.trim()) {
             setError('Пожалуйста, заполните email и телефон.');
@@ -114,14 +113,14 @@ function BookingPage() {
     }
 
     return (
-        <div className="container py-5" style={{ maxWidth: '1000px' }}>
+        <div className="pt-2" style={{ maxWidth: '1000px' }}>
             {error && (
                 <div className="alert alert-danger mb-4" role="alert">
                     <p className="mb-0" data-testid="booking-error">{error}</p>
                 </div>
             )}
 
-            <h1 className="fw-bold mb-4 fs-1">Оформление бронирования</h1>
+            <h2 className="fw-bold mb-4">Оформление бронирования</h2>
 
             <p className="fs-5 mb-4">
                 {flight?.airline.name} · <span data-testid="booking-flight">{flight?.flightNumber}</span>: {flight?.origin.name} → {flight?.destination.name}
