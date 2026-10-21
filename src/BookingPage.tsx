@@ -226,7 +226,7 @@ function BookingPage() {
                         type="button"
                         className="btn text-primary bg-primary bg-opacity-25 fw-semibold px-4 py-2 border-0"
                         onClick={handleAddPassenger}
-                        data-test-id="add-passenger"
+                        data-testid="add-passenger"
                     >
                         Добавить пассажира
                     </button>
