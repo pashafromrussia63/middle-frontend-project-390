@@ -6,7 +6,7 @@ build:
 	npm run build
 
 test:
-	npx playwright test tests/smoke.spec.ts
+	npm test
 
 mock-api:
 	npx @stoplight/prism-cli mock contract/openapi.yaml

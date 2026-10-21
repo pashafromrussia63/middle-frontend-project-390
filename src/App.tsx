@@ -8,7 +8,7 @@ function App() {
     return (
         <div className="container py-4" style={{ maxWidth: '1000px' }}>
             <header className="mb-1">
-                <h1 className="fw-bold mb-3" style={{ fontSize: '2.5rem' }}>
+                <h1 className="fw-bold mb-3" style={{ fontSize: '2.5rem' }} data-testid="main-heading">
                     Бронирование авиабилетов
                 </h1>
                 

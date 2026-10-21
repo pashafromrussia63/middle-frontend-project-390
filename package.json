@@ -10,7 +10,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "test": "playwright test tests/smoke.spec.ts"
+    "test": "playwright test"
   },
   "keywords": [],
   "author": "",
