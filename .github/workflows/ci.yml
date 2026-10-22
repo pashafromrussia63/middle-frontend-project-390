@@ -23,5 +23,6 @@ jobs:
 
       - name: Start server & test
         run: |
-          npx serve dist -l 5173 &
-          APP_URL=http://localhost:5173 make test
+          make start &
+          npx wait-on http://localhost:8080
+          APP_URL=http://localhost:8080 make test
