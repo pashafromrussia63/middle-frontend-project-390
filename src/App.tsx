@@ -18,7 +18,6 @@ function App() {
                         className={({ isActive }) => 
                             `nav-link px-0 me-4 ${isActive ? 'text-primary' : 'text-secondary'}`
                         }
-                        data-testid="nav-lookup"
                     >
                         Поиск рейсов
                     </NavLink>

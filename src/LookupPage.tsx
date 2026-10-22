@@ -110,7 +110,7 @@ function LookupPage() {
             )}
 
             {bookingNotFoundError && (
-                <div className="alert alert-danger" role="alert" data-testid="">
+                <div className="alert alert-danger" role="alert" data-testid="booking-not-found">
                     {bookingNotFoundError}
                 </div>
             )}
