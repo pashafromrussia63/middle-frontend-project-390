@@ -125,6 +125,7 @@ function LookupPage() {
                                     booking.status === 'confirmed' ? 'bg-success' : 'bg-danger'
                                 }`}
                                 data-testid="booking-status"
+                                data-status={booking.status}
                             >
                                 {booking.status === 'confirmed' ? 'Подтверждена' : 'Отменена'}
                             </span>
