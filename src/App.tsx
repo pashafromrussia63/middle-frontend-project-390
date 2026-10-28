@@ -5,6 +5,10 @@ import BookingPage from './BookingPage';
 import LookupPage from './LookupPage';
 
 function App() {
+    const throwError = () => {
+        throw Error('Test error');
+    }
+
     return (
         <div className="container py-4" style={{ maxWidth: '1000px' }}>
             <header className="mb-1">
@@ -33,6 +37,8 @@ function App() {
                     </NavLink>
                 </nav>
             </header>
+
+            <button onClick={throwError}>Test error</button>
 
             <main>
                 <Routes>
